@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Severity {
+  Low
+  Medium
+  High
+  Severe
+}
+
+enum Status {
+  reported
+  under_review
+  resolved
+  disputed
+}
+
+model Report {
+  id                              String   @id
+  userId                          String
+  userEmail                       String
+  imageUrl                        String
+  issueType                       String
+  severity                        Severity
+  description                     String
+  latitude                        Float
+  longitude                       Float
+  status                          Status   @default(reported)
+  repairImageUrl                  String?
+  verificationConfidence          Float?
+  verificationReason              String?
+  fraudRisk                       String?
+  communityReports                Int      @default(0)
+  affectedCount                   Int      @default(0)
+  confirmedBy                     String[]
+  supportingReports               Json     @default("[]") @db.JsonB
+  resolvedAt                      DateTime?
+  createdAt                       DateTime @default(now())
+  updatedAt                       DateTime @updatedAt
+  previousRepairImageUrl          String?
+  previousVerificationConfidence  Float?
+  previousVerificationReason      String?
+  previousFraudRisk               String?
+  verificationAttempts            Int?
+
+  // Automatic Authority Routing
+  department                      String?
+  departmentName                  String?
+  assignedAuthority               String?
+  zone                            String?
+  ward                            String?
+  slaDeadline                     DateTime?
+  priorityLevel                   String?
+  routingReason                   String?
+  escalated                       Boolean? @default(false)
+
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
+  @@index([department])
+  @@index([zone])
+}
