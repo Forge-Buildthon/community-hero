@@ -1,24 +1,21 @@
 <div align="center">
 
-# 🏆 Community Hero
+# 🏙️ Community Hero
+
 ### AI-Powered Hyperlocal Civic Issue Reporting & Resolution Platform
 
-![Community Hero Hackathon 2026](https://img.shields.io/badge/Community_Hero_Hackathon-2026-4285F4?style=for-the-badge&logo=google&logoColor=white)
-![Organized by Coding Ninjas](https://img.shields.io/badge/Organized_by-Coding_Ninjas-FF6B6B?style=for-the-badge)
 ![License MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Neon](https://img.shields.io/badge/Neon_Postgres-00E599?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Firebase Auth](https://img.shields.io/badge/Firebase_Auth-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-![Gemini AI](https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge&logo=googlebard&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Gemini AI](https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge)
 ![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
 
-Built for the **Google Community Hero Hackathon**, organized by **Coding Ninjas**, leveraging **Google Gemini**, **Neon Postgres**, **Firebase Authentication**, and **Vercel** to build an AI-powered civic issue resolution platform.
+Community Hero helps citizens report local infrastructure problems, enables communities to validate shared issues, and gives municipal authorities tools to route, prioritize, track, and verify resolutions.
 
 [Live Demo](https://community-hero-lake.vercel.app/)
 
@@ -29,13 +26,11 @@ Built for the **Google Community Hero Hackathon**, organized by **Coding Ninjas*
 ## 📖 Table of Contents
 
 - [Project Overview](#-project-overview)
-- [Hackathon Requirements (Judges' Guide)](#-hackathon-requirements-judges-guide)
 - [Key Features](#-key-features)
-- [Google Technologies Utilized](#-google-technologies-utilized)
 - [Tech Stack](#️-tech-stack)
 - [System Architecture](#️-system-architecture)
-- [Application Flow](#-application-flow)
-- [Screenshots](#-screenshots)
+- [End-to-End Workflow](#-end-to-end-workflow)
+- [Data and Status Lifecycle](#-data-and-status-lifecycle)
 - [Repository Structure](#-repository-structure)
 - [Getting Started](#-getting-started)
 - [Environment Variables](#-environment-variables)
@@ -43,190 +38,218 @@ Built for the **Google Community Hero Hackathon**, organized by **Coding Ninjas*
 - [Future Improvements](#-future-improvements)
 - [Contributing](#-contributing)
 - [Acknowledgements](#-acknowledgements)
-- [Contact](#-contact)
 
 ---
 
 ## 🌍 Project Overview
 
 ### The Problem
-Traditional civic reporting systems are broken: manual routing, subjective prioritization, bureaucratic bottlenecks, and "black-hole" feedback loops where citizens never hear back about their complaints. This leads to frustrated citizens, wasted municipal resources, and deteriorating infrastructure.
+
+Civic issues such as potholes, overflowing garbage, broken streetlights, waterlogging, and sewage problems can remain unresolved because reports are fragmented, responsibility is unclear, and citizens often lack visibility into what happens after they submit a complaint.
 
 ### The Community Hero Solution
-**Community Hero** is an AI-powered civic issue management platform that enables citizens to report local infrastructure problems using images. Google Gemini automatically classifies issues, estimates severity, and assists authorities by verifying repair evidence through before-and-after image comparison — bringing transparency, speed, and intelligence to civic issue resolution.
 
----
+**Community Hero** is an AI-assisted civic issue management platform. Citizens submit an image and location; AI helps classify the issue and estimate its severity. Reports are checked for nearby duplicates, community members can confirm that they are affected, and the platform routes incidents to the appropriate municipal department with a priority and service-level deadline.
 
-## 🏆 Hackathon Requirements (Judges' Guide)
-
-<details open>
-<summary><b>Click to expand Hackathon Details</b></summary>
-
-| Criteria | Implementation in Community Hero |
-| :--- | :--- |
-| **Problem Statement** | Community Hero – Hyperlocal Problem Solver. Empowers citizens to instantly report and track local civic issues while equipping authorities with an AI-assisted review and verification dashboard. |
-| **Theme Alignment** | AI for Smart Cities. Integrates Gemini directly into the civic issue lifecycle — from detection to repair verification — to create transparent, self-organizing urban maintenance workflows. |
-| **Solution Overview** | An end-to-end platform bridging citizens and authorities via AI-powered classification, severity estimation, duplicate detection, community validation, and repair verification. |
-| **Impact & Community Benefits** | Reduces issue triage time from days to seconds. Promotes civic engagement through real-time tracking and community validation. Helps authorities detect fraudulent repair claims. |
-| **Innovation & AI Capabilities** | Multimodal image-based issue detection, AI-driven severity scoring, smart duplicate merging within a 100m radius, and AI-powered before/after repair verification with re-verification workflows. |
-
-</details>
+Authorities can update the incident and submit repair evidence. AI compares the original and repair images to support verification, while disputed evidence can be sent for further review. The goal is a transparent, traceable workflow from reporting through resolution.
 
 ---
 
 ## ✨ Key Features
 
-### 🤖 AI & Automation
-- **AI Issue Detection** — Google Gemini automatically detects civic issues from uploaded images, identifying type (Pothole, Garbage, Streetlight, Water Logging, Sewage) and estimating severity (Low, Medium, High, Severe).
-- **AI Repair Verification** — Compares before-and-after images to verify completed repairs and flag potentially fraudulent submissions.
-- **Re-Verification Workflow** — Disputed repairs can be resubmitted with new evidence for another round of AI verification.
-- **Smart Duplicate Detection** — Automatically merges reports within a 100m radius to prevent duplicate complaints and spam.
+### Citizen Reporting and Community
 
-### 🏙️ Civic & Authority Tools
-- **Community Validation** — Citizens can confirm they're affected by an issue; higher validation increases its priority.
-- **Interactive Issue Map** — Live emoji markers (🕳️🗑️💡💧🤢) with marker size scaling dynamically by affected citizen count.
-- **Citizen Dashboard** — Nearby issues, live statistics, filtering & sorting, and an interactive map view.
-- **Authority Dashboard** — Incident management, AI insights, fraud detection, and repair verification in one place.
-- **Real-Time-Feel Sync** — Client-side polling / revalidation keeps dashboards fresh against the Neon Postgres backend.
+- **Image-Based Reporting** — Submit a civic issue with a photograph and map location.
+- **AI Issue Classification** — Gemini analyzes the image and identifies an issue category and severity.
+- **Nearby Duplicate Detection** — Detects potentially overlapping reports and associates supporting reports with a canonical incident.
+- **Community Validation** — Citizens can select “I am affected too.” Community impact can influence the incident’s urgency.
+- **Interactive Issue Map** — View nearby issues with markers whose size reflects affected-citizen count.
+- **Citizen Dashboard** — Explore nearby incidents, view report details, and follow status and authority updates.
 
-### 🎨 UI / UX
-- **Responsive Design** — Consistent experience across mobile, tablet, and desktop.
-- **Role-Based Access** — Separate, tailored experiences for Citizens and Authorities.
+### Authority Operations
 
----
+- **Automatic Department Routing** — Route incidents by issue category and jurisdictional information.
+- **Priority and SLA Assignment** — Set a priority and resolution deadline based on incident rules.
+- **SLA Monitoring and Escalation** — Check overdue active incidents and move them through escalation tiers, recording escalation events for auditability.
+- **Authority Dashboard** — Review department queues, status, urgency, SLA deadlines, escalation history, and routing details.
+- **Manual Reassignment** — Support authority-side reassignment when a report needs a different department or jurisdiction.
 
-## ⚡ Google Technologies Utilized
+### Evidence-Based Resolution
 
-| Technology | Purpose in Community Hero |
-| :--- | :--- |
-| **Gemini API** | The core brain — multimodal image analysis for issue detection, severity scoring, and before/after repair verification. |
-| **Firebase Authentication** | Secure, role-based authentication for citizens and authorities. |
-| **Google AI Studio** | Used to prototype and validate Gemini prompts and structured JSON output schemas before backend integration. |
-
-> **Note:** Data storage has migrated from Firebase Firestore to **Neon Postgres**. Firebase is now used exclusively for **Authentication**.
+- **Repair Evidence Submission** — Authorities upload an after-image when reporting a repair.
+- **AI-Assisted Repair Verification** — Gemini compares the original issue image with the submitted after-image and returns a verification assessment.
+- **Resolved or Disputed Outcome** — Evidence that supports the repair can advance the incident toward resolution; questionable evidence can be flagged for review or re-verification.
+- **Resolution Audit Trail** — Preserve status and escalation events to make the incident lifecycle more traceable.
 
 ---
 
 ## 🛠️ Tech Stack
 
-### 🎨 Frontend
-- ![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=flat&logo=next.js&logoColor=white) **Next.js 16 (App Router)**
-- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB) **React**
-- ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white) **TypeScript**
-- ![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white) **Tailwind CSS**
+| Layer | Technology | Responsibility |
+|---|---|---|
+| Frontend | Next.js, React, TypeScript, Tailwind CSS | Citizen and authority interfaces |
+| Backend | Next.js API routes | Report, analysis, routing, escalation, and verification endpoints |
+| Database | Neon PostgreSQL | Reports, status, community validations, routing and escalation data |
+| ORM | Prisma | Database schema and data access |
+| Authentication | Firebase Authentication | Sign-in and identity management |
+| AI | Google Gemini Flash API | Image-based classification, severity assessment, and repair-evidence comparison |
+| Image Storage | Cloudinary | Image upload, storage, and delivery |
+| Maps | Leaflet, OpenStreetMap | Location selection and incident visualization |
+| Deployment | Vercel | Web application and API hosting |
 
-### ⚙️ Backend
-- **Next.js API Routes** — Serverless functions for analysis, reporting, and verification endpoints.
-
-### 🗄️ Database
-- ![Neon](https://img.shields.io/badge/Neon-00E599?style=flat&logo=postgresql&logoColor=white) **Neon (Serverless Postgres)** — Primary datastore for reports, statuses, validations, and repair records.
-- **ORM / Query layer** — e.g. Prisma or `@neondatabase/serverless` for querying Neon from Next.js API routes.
-
-### 🔐 Authentication
-- ![Firebase](https://img.shields.io/badge/Firebase_Auth-FFCA28?style=flat&logo=firebase&logoColor=black) **Firebase Authentication** — Secure sign-in/sign-up and role-based session management for Citizens and Authorities.
-
-### 🤖 Artificial Intelligence
-- **Google Gemini Flash** — Issue detection, severity scoring, repair verification.
-
-### 🖼️ Image Storage
-- ![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=flat&logo=cloudinary&logoColor=white) **Cloudinary**
-
-### 🗺️ Maps
-- **Leaflet** & **OpenStreetMap**
-
-### ☁️ Deployment
-- ![Vercel](https://img.shields.io/badge/Vercel-%23000000.svg?style=flat&logo=vercel&logoColor=white) **Vercel** — Hosting for the Next.js app (frontend + API routes).
+Firebase is used for authentication. Report and incident data are stored in Neon PostgreSQL.
 
 ---
 
 ## 🏗️ System Architecture
 
+The application is organized around a central incident record. Citizen reports, community confirmations, authority actions, SLA escalation events, and repair verification all contribute to the lifecycle of that incident.
+
 ```mermaid
-graph TD
-    %% Entities
-    Citizen((🧑‍🤝‍🧑 Citizen))
-    Authority((🏛️ Authority))
+flowchart TB
+    Citizen([Citizen])
+    Authority([Municipal Authority])
 
-    %% Frontend
-    subgraph Frontend [Client - Next.js / React, hosted on Vercel]
-        WebUI[Web App UI]
-        Map[Interactive Issue Map - Leaflet]
+    subgraph Client["Web Client — Next.js / React"]
+        CitizenUI[Citizen Reporting and Dashboard]
+        AuthorityUI[Authority Operations Dashboard]
+        Map[Interactive Map — Leaflet]
     end
 
-    %% Backend
-    subgraph Backend [Next.js API Routes on Vercel]
-        AuthAPI[Auth Middleware]
-        ReportAPI[Report API]
-        AnalyzeAPI[Analyze API]
-        VerifyAPI[Verify Repair API]
+    subgraph API["Application Backend — Next.js API Routes"]
+        Auth[Authentication and Authorization]
+        Analyze[Image Analysis API]
+        Report[Report and Incident API]
+        Duplicate[Duplicate Detection and Community Validation]
+        Routing[Department and Jurisdiction Routing]
+        SLA[SLA Monitor and Escalation Service]
+        Verify[Repair Evidence Verification API]
     end
 
-    %% Google / External Services
-    subgraph Services [AI, Auth & Media Services]
-        Gemini[🤖 Gemini Flash API]
-        FirebaseAuth[🔐 Firebase Authentication]
-        Cloudinary[🖼️ Cloudinary]
+    subgraph External["External Services"]
+        Firebase[Firebase Authentication]
+        Gemini[Gemini Flash API]
+        Cloudinary[Cloudinary Image Storage]
+        OSM[OpenStreetMap Tiles]
     end
 
-    %% Database
-    subgraph Database [Storage]
-        Neon[(🐘 Neon Postgres)]
-    end
+    DB[(Neon PostgreSQL)]
 
-    %% Flow
-    Citizen -->|Sign In| FirebaseAuth
-    FirebaseAuth -->|Auth Token| WebUI
-    Citizen -->|Uploads Image + Location| WebUI
-    WebUI -->|REST Call| AnalyzeAPI
-    AnalyzeAPI <-->|Image Analysis| Gemini
-    AnalyzeAPI --> ReportAPI
-    ReportAPI --> AuthAPI
-    ReportAPI <--> Neon
-    WebUI <-->|Image Upload| Cloudinary
-    Map <-->|Query Data| Neon
+    Citizen --> CitizenUI
+    Authority --> AuthorityUI
+    CitizenUI --> Auth
+    AuthorityUI --> Auth
+    Auth <--> Firebase
 
-    Neon -->|Updates| Authority
-    Authority -->|Review / Repair Upload| VerifyAPI
-    VerifyAPI <-->|Before/After Comparison| Gemini
-    VerifyAPI --> Neon
+    CitizenUI -->|Image and location| Cloudinary
+    CitizenUI --> Analyze
+    Analyze -->|Image analysis request| Gemini
+    Analyze --> Report
+    Report --> Duplicate
+    Duplicate --> DB
+    Report --> Routing
+    Routing --> DB
+
+    CitizenUI -->|Affected confirmation| Duplicate
+    Duplicate -->|Community impact| DB
+
+    AuthorityUI -->|Review and repair evidence| Verify
+    Verify --> Cloudinary
+    Verify <-->|Before/after image comparison| Gemini
+    Verify --> DB
+
+    SLA -->|Read active incidents and deadlines| DB
+    SLA -->|Escalation events and updated routing| DB
+
+    CitizenUI -->|Read nearby incidents| DB
+    AuthorityUI -->|Read department queues| DB
+    Map --- OSM
+```
+
+### Architecture Notes
+
+- **Neon PostgreSQL** is the source of truth for incident records and operational state.
+- **Gemini** provides AI assessments; it does not independently perform physical repairs or guarantee that an issue is resolved.
+- **Cloudinary** stores report and repair images. The application stores the associated image references.
+- **Routing** assigns a responsible department and jurisdiction using configured issue and location rules.
+- **SLA escalation** applies to eligible active incidents. Escalation events are recorded so that changes can be reviewed.
+- **Community validation** contributes evidence of impact and can affect urgency according to the configured rules.
+- **Repair verification** compares submitted evidence with the original report and supports a resolved/disputed decision.
+
+---
+
+## 🔄 End-to-End Workflow
+
+```mermaid
+flowchart TD
+    A([Citizen notices a civic issue]) --> B[Upload image and select location]
+    B --> C[Gemini classifies issue and estimates severity]
+    C --> D[Check for nearby duplicate incidents]
+    D --> E{Potential duplicate found?}
+    E -->|Yes| F[Associate report with canonical incident]
+    E -->|No| G[Create a new incident]
+    F --> H[Save incident and report details]
+    G --> H
+
+    H --> I[Route to department and jurisdiction]
+    I --> J[Assign priority and SLA deadline]
+    J --> K[Show incident on citizen and authority dashboards]
+    K --> L[Community members confirm they are affected]
+    L --> M[Update community impact and urgency when applicable]
+    M --> N[Authority reviews and carries out repair]
+
+    N --> O[Authority uploads after-image evidence]
+    O --> P[Gemini compares original and repair images]
+    P --> Q{Evidence supports repair?}
+    Q -->|Yes| R[Mark resolution as verified / resolved]
+    Q -->|No or uncertain| S[Flag as disputed or request review]
+    S --> T[Authority submits additional evidence or re-verifies]
+    T --> P
+
+    J --> U[Monitor SLA deadline]
+    U --> V{Active incident overdue?}
+    V -->|No| U
+    V -->|Yes| W[Escalate to next configured tier]
+    W --> X[Record escalation event and notify/update workflow]
+    X --> U
 ```
 
 ---
 
-## 🔄 Application Flow
+## 🧭 Data and Status Lifecycle
 
-```mermaid
-flowchart LR
-    A([📱 Citizen Reports Issue]) --> B{📸 Uploads Image & Location}
-    B --> C[🧠 Gemini Analyzes Issue]
-    C -->|Type + Severity Generated| D[(Report Saved to Neon Postgres)]
-    D --> E[🗺️ Map & Dashboard Update]
-    E --> F[👥 Community Validation]
-    F --> G[🏛️ Authority Reviews Report]
-    G --> H[🛠️ Repair Image Uploaded]
-    H --> I[🧠 Gemini Compares Before & After]
-    I -->|Verified| J([✅ Status: Resolved])
-    I -->|Disputed| K([🔄 Needs Re-Verification])
+### Incident Statuses
 
-    style A fill:#4285F4,stroke:#fff,stroke-width:2px,color:#fff
-    style C fill:#8E75B2,stroke:#fff,stroke-width:2px,color:#fff
-    style I fill:#8E75B2,stroke:#fff,stroke-width:2px,color:#fff
-    style J fill:#34A853,stroke:#fff,stroke-width:2px,color:#fff
-```
+| Status | Meaning |
+|---|---|
+| `reported` | Incident has been submitted and is awaiting action |
+| `under_review` | An authority is reviewing or handling the incident |
+| `resolved` | The incident has been marked resolved following the resolution workflow |
+| `disputed` | Submitted resolution evidence requires further review or re-verification |
+
+### Routing and Escalation
+
+Each incident can include routing information such as department, assigned authority, zone or ward, priority, SLA deadline, and routing rationale.
+
+The SLA escalation service evaluates eligible active incidents against their deadlines. When a deadline is breached, the service can advance the incident through configured escalation tiers and create an escalation event containing the transition and breach details. Resolved and disputed incidents are excluded from the active escalation path according to the current service rules.
+
+> Exact department mappings, jurisdiction boundaries, SLA durations, escalation intervals, and scheduler configuration are deployment-specific. Confirm these values against the current application configuration before relying on them operationally.
 
 ---
 
 ## 📸 Screenshots
 
 | Landing Page | Citizen Dashboard |
-| :---: | :---: |
+|:---:|:---:|
 | ![Landing Page](public/screenshots/landing-page.png) | ![Citizen Dashboard](public/screenshots/citizen-dashboard.png) |
-| **AI Issue Detection & Report Review** | **AI Repair Verification** |
-| ![AI Issue Detection](public/screenshots/authority-review.png) | ![AI Repair Verification](public/screenshots/ai-repair-detection.png) |
-| **Authority Dashboard** | |
-| ![Authority Dashboard](public/screenshots/authority-dashboard.png) | |
 
-> *Gemini analyzes reported civic issues, classifies severity, and assists authorities during the review and repair-verification process.*
+| Report Review | Repair Verification |
+|:---:|:---:|
+| ![Authority Review](public/screenshots/authority-review.png) | ![AI Repair Verification](public/screenshots/ai-repair-detection.png) |
+
+| Authority Dashboard |
+|:---:|
+| ![Authority Dashboard](public/screenshots/authority-dashboard.png) |
 
 ---
 
@@ -239,160 +262,185 @@ community-hero/
 │   │   ├── api/
 │   │   │   ├── analyze/
 │   │   │   ├── report/
-│   │   │   └── verify-repair/
+│   │   │   ├── verify-repair/
+│   │   │   └── cron/
+│   │   │       └── escalate/
 │   │   ├── authority/
 │   │   ├── dashboard/
 │   │   ├── report/
 │   │   ├── all-reports/
 │   │   └── page.tsx
 │   ├── components/
-│   │   └── IssueMap.tsx
 │   ├── lib/
-│   │   ├── db/            # Neon Postgres client / query helpers
+│   │   ├── db/
 │   │   ├── services/
+│   │   │   ├── routing/
+│   │   │   └── escalation/
 │   │   ├── types/
 │   │   └── utils/
 │   └── providers/
+├── prisma/
+│   └── schema.prisma
 ├── public/
 │   └── screenshots/
 ├── package.json
-└── .env.local
+└── .env.example
 ```
+
+> This is a conceptual structure. Directory and file names may differ in the current codebase.
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v18 or later)
-- npm or yarn
-- A Neon Postgres project ([neon.tech](https://neon.tech))
-- Firebase Project (Authentication enabled)
-- Google AI Studio API Key
-- Cloudinary Account
+
+- Node.js 18 or later
+- npm
+- A Neon PostgreSQL database
+- A Firebase project with Authentication enabled
+- A Gemini API key
+- A Cloudinary account
 
 ### 1. Clone the Repository
+
 ```bash
-git clone https://github.com/Tanishq-Bansal-443/community-hero.git
+git clone https://github.com/Forge-Buildthon/community-hero.git
 cd community-hero
 ```
 
 ### 2. Install Dependencies
+
 ```bash
 npm install
 ```
 
 ### 3. Configure Environment Variables
-Create a `.env.local` file in the project root (see [Environment Variables](#-environment-variables) below).
 
-### 4. Run Database Migrations
-If using Prisma (or your chosen migration tool) against Neon:
+Create a `.env.local` file in the project root using the variables listed in [Environment Variables](#-environment-variables).
+
+### 4. Set Up the Database
+
+Apply the Prisma migrations used by the project:
+
 ```bash
 npx prisma migrate deploy
+npx prisma generate
 ```
 
-### 5. Start Development Server
+If the repository's migration setup differs, follow the database setup documented by the current schema and migration files.
+
+### 5. Start the Development Server
+
 ```bash
 npm run dev
 ```
 
-### 6. Open the Application
-```text
-http://localhost:3000
-```
+Open [http://localhost:3000](http://localhost:3000).
 
 ---
 
 ## 🔑 Environment Variables
 
-```env
-# Neon Postgres
-DATABASE_URL=your_neon_connection_string
-DIRECT_URL=your_neon_direct_connection_string   # only if using a pooled + direct URL setup
+Use your own credentials. Do not commit `.env.local` or production secrets.
 
-# Firebase Authentication only
+```env
+# Neon PostgreSQL
+DATABASE_URL=your_neon_connection_string
+DIRECT_URL=your_neon_direct_connection_string
+
+# Firebase Authentication
 NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
 NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
 NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-FIREBASE_ADMIN_PROJECT_ID=your_project_id           # if using Firebase Admin SDK server-side
+
+# Firebase Admin SDK (only if used server-side)
+FIREBASE_ADMIN_PROJECT_ID=your_project_id
 FIREBASE_ADMIN_CLIENT_EMAIL=your_service_account_email
 FIREBASE_ADMIN_PRIVATE_KEY=your_service_account_private_key
 
-# Gemini AI
+# Gemini
 GEMINI_API_KEY=your_gemini_api_key
 
 # Cloudinary
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
 NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=your_upload_preset
+
+# SLA escalation endpoint (if configured)
+CRON_SECRET=your_cron_secret
 ```
 
-> [!IMPORTANT]
-> You must add your own `GEMINI_API_KEY` and `DATABASE_URL` in `.env.local` to use the AI and data-persistence capabilities of this project. Firebase variables are only required for Authentication — Firestore is no longer used.
+Only configure variables required by the code paths you use. Keep private keys and server-side API secrets out of client-side variables.
 
 ---
 
 ## 🌐 Deployment
 
-The application is deployed on **Vercel**, with **Neon Postgres** as the managed database (Neon integrates natively with Vercel, including branch-based preview databases for pull requests).
+The application can be deployed to Vercel with Neon PostgreSQL as the database.
 
 ### Build
+
 ```bash
 npm run build
 ```
 
 ### Deploy
-You can deploy the application to Vercel using the Vercel CLI:
+
+Connect the repository to Vercel or use the Vercel CLI:
 
 ```bash
-npm i -g vercel
+npm install -g vercel
 vercel --prod
 ```
 
-Or connect the repository to your Vercel account for automatic deployments on push. Make sure the Neon `DATABASE_URL` and Firebase Auth environment variables are set in your Vercel project settings.
+Configure the required environment variables in the deployment environment.
+
+### SLA Escalation Scheduling
+
+The escalation endpoint or CLI must be invoked by a scheduler for automatic periodic checks. Configure a recurring job in the hosting environment and secure the endpoint with the configured secret. A dashboard-triggered sweep is useful for testing or authorized manual operation, but it is not a substitute for a deployed recurring schedule.
 
 ### Live Demo
-**https://community-hero-lake.vercel.app/**
+
+[https://community-hero-lake.vercel.app/](https://community-hero-lake.vercel.app/)
 
 ---
 
 ## 🔮 Future Improvements
 
-We have a broader vision for Community Hero. Post-hackathon, we plan to implement:
-- **IoT Sensor Sync** — Connecting smart city sensors (water pressure, traffic) to automatically open tickets.
-- **Predictive Maintenance Insights** — AI-driven forecasting of infrastructure degradation hotspots.
-- **Satellite / Drone Monitoring** — Macro-level detection of infrastructure shifts and large-scale damage.
-- **Emergency Alert Broadcasts** — Push notifications to citizens based on hyperlocal critical hazards.
-- **Blockchain Verification** — Immutable ledgers for municipal budget allocation and repair completion proof.
-- **Live Real-Time Updates** — Adopt WebSockets/Server-Sent Events or Neon's change-data-capture options for instant multi-device sync, replacing polling.
+- **Jurisdiction Data Integration** — Use authoritative municipal ward and department boundaries for more accurate geographic routing.
+- **Public Performance Analytics** — Publish aggregate resolution times, overdue rates, and department-level outcomes.
+- **Citizen Notifications** — Notify reporters when an incident is routed, escalated, disputed, or resolved.
+- **Recurring Issue Detection** — Identify issues that reappear after a previously verified repair.
+- **Real-Time Updates** — Use WebSockets, Server-Sent Events, or change-data-capture mechanisms instead of polling.
+- **Predictive Maintenance** — Identify infrastructure hotspots from historical incident patterns.
+- **Accessibility and Multilingual Support** — Improve access for residents with different language and accessibility needs.
 
 ---
 
 ## 🤝 Contributing
 
-This project was developed for the **Google Community Hero Hackathon**, organized by **Coding Ninjas**.
-
-Contributions, suggestions, and feedback are welcome — feel free to open an issue or submit a pull request.
+Contributions, suggestions, and feedback are welcome. Open an issue to discuss a proposed change or submit a pull request.
 
 ---
 
 ## 🙏 Acknowledgements
 
-- **Google** — For providing Gemini API and Google AI Studio.
-- **Neon** — For serverless Postgres hosting.
-- **Firebase** — For Authentication.
-- **Vercel** — For hosting the production application.
-- **Coding Ninjas** — For organizing and hosting the Community Hero Hackathon and providing an excellent platform to build impactful AI-powered solutions.
-- **Cloudinary** — For image storage and delivery.
-- **Leaflet & OpenStreetMap** — For enabling the interactive mapping experience.
+- **Google Gemini** — AI-assisted image classification and repair-evidence comparison.
+- **Neon** — Managed PostgreSQL.
+- **Firebase** — Authentication.
+- **Vercel** — Application hosting.
+- **Cloudinary** — Image storage and delivery.
+- **Leaflet and OpenStreetMap** — Interactive mapping.
 
 ---
 
 ## 📫 Contact
 
-For any inquiries, feedback, or collaboration opportunities, feel free to open an issue on the [repository](https://github.com/Tanishq-Bansal-443/community-hero).
+For inquiries, feedback, or collaboration, open an issue in the [Community Hero repository](https://github.com/Forge-Buildthon/community-hero).
 
 <div align="center">
-<br>
-<i>Crafted with ❤️ for the Google Community Hero Hackathon</i>
+
+*Built to make civic issue reporting and resolution more transparent.*
+
 </div>
